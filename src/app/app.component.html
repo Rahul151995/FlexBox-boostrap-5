@@ -1,0 +1,52 @@
+<section class="main-section">
+  <div class="bg-white">
+    <h3 class="text-center p-4">Bootstrap 4 FLEXBOX</h3>
+      <div class="container">
+        <div class="row row-container mt-5">
+   
+             <div class="d-flex" [ngClass]="layoutDirection + ' ' +  layoutHorizontal + ' ' + layoutVertical ">
+                  <div class="item1 p-5"></div>
+                  <div class="item2 p-4"></div>
+                  <div class="item3 p-3"></div>
+                  <div class="item4 p-5"></div>
+                  <div class="item5 p-4"></div>
+             </div>
+
+
+        </div>
+
+        <div class="row p-4">
+          <div class="col-lg-4 mb-4">
+            <h4>Layout Direction</h4>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" [(ngModel)]="layoutDirection" [value]="'flex-row'" class="form-check-input" name="layoutDirection">Row
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" [(ngModel)]="layoutDirection" [value]="'flex-column'" class="form-check-input" name="layoutDirection">Coloumn
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h4>Alignment in Layout Direction (horizontal)</h4>
+            <div class="form-check" *ngFor="let d of horizontalAlign">
+              <label class="form-check-label">
+                <input type="radio" [(ngModel)]="layoutHorizontal" [value]="d.cssClass" class="form-check-input" name="layoutHorizontals">{{d.cssClass}} {{d.default ? '(default)': ''}}
+              </label>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h4>Alignment in Perpendicular Direction (vertical)</h4>
+            <div class="form-check" *ngFor="let d of verticalAlign">
+              <label class="form-check-label">
+                <input type="radio" [(ngModel)]="layoutVertical" [value]="d.cssClass" class="form-check-input" name="layoutVerticals">{{d.cssClass}} {{d.default ? '(default)': ''}}
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</section>
